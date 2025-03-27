@@ -12,8 +12,10 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+import os
+
 # Путь к файлу с ключом
-CREDENTIALS_PATH = '/Users/nikitaeliseev/Desktop/telegram_balance_bot/credentials.json'
+CREDENTIALS_PATH = os.getenv("CREDENTIALS_PATH", "credentials.json")
 SCOPE = ["https://www.googleapis.com/auth/spreadsheets.readonly", "https://www.googleapis.com/auth/drive.readonly"]
 
 # Проверка существования файла
